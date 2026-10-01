@@ -263,7 +263,7 @@
     },
     {
       id: 'cos',
-      title: 'Cosplay ',
+      title: 'Cosplay Matsuri 2026',
       category: 'photo',
       categoryLabel: 'Photo edit',
       description: 'Photos taken from CosMatsuri 2026',
@@ -300,6 +300,33 @@
       linkHref: 'https://youtu.be/aLXUnKOZDbY0',
       icon: 'video',
       youtubeUrl: 'aLXUnKOZDbY'
+    },
+    {
+      id: 'mds',
+      title: 'Master Driving School System',
+      category: 'apps',
+      categoryLabel: 'Applications',
+      description: 'A system specifically made for Master Driving School to manage their students and instructors',
+      image: 'assets/photos/mds/1.png',
+      gallery: [
+      'assets/photos/mds/1.png',
+      'assets/photos/mds/2.png',
+      'assets/photos/mds/3.png',
+      'assets/photos/mds/4.png',
+      'assets/photos/mds/5.png',
+      'assets/photos/mds/6.png',
+      'assets/photos/mds/7.png',
+      'assets/photos/mds/8.png',
+      'assets/photos/mds/9.png',
+      'assets/photos/mds/10.png'
+      ],
+      features: [
+        'Videography and editing made by me',
+        'Basic audio mixing and color grading',
+        'Used phone for videography'
+      ],
+      tags: ['DaVinci Resolve', 'Color-Grading', 'Phone'],
+      icon: 'apps',
     }
   ];
 
@@ -485,7 +512,7 @@
         </iframe>`;
     }
     // 2. PHOTO EDIT GALLERY DISPLAY (Click image for Fullscreen Lightbox)
-    else if (p.category === 'photo' && p.gallery && p.gallery.length > 0) {
+    else if (p.gallery && p.gallery.length > 0) {
       let activeIdx = 0;
       thumbEl.innerHTML = `
         <div class="relative w-full h-full flex items-center justify-center bg-black/30 rounded-md overflow-hidden group">
