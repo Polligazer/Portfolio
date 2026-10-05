@@ -35,7 +35,6 @@
 </header>
 
 <main id="top">
-  <!-- HERO -->
   <section id="hero" class="relative overflow-hidden border-b border-hairline">
     <div class="hero-grid"></div>
     <div class="hero-glow" id="hero-glow"></div>
@@ -46,8 +45,7 @@
       </h1>
       <p class="reveal font-display text-lg sm:text-xl mt-4 text-accent" style="transition-delay:.16s">Developer &amp; Visual Editor</p>
       <p class="reveal max-prose mt-6 text-base sm:text-lg leading-relaxed text-muted" style="transition-delay:.24s">
-        I build web apps and interfaces, then switch tools to cut video and grade photos.
-        Same attention to detail, different medium — I like the range.
+        I build web apps and interfaces to editing videos and photos. I enjoy creating things that are both functional and visually appealing.
       </p>
       <div class="reveal mt-10" style="transition-delay:.32s">
         <a href="#work" class="link-cta">See selected work</a>
@@ -55,7 +53,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="work" class="max-w-6xl mx-auto px-6 sm:px-8 py-20 sm:py-24">
     <div class="flex items-baseline justify-between gap-6 flex-wrap mb-10">
       <h2 class="font-display font-semibold" style="font-size:clamp(1.4rem,3vw,1.9rem)">Selected work</h2>
@@ -70,16 +67,15 @@
 
 <footer class="border-t border-hairline">
   <div class="max-w-6xl mx-auto px-6 sm:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-    <p class="text-sm text-muted">Aezekiel Matthew Licardo — built one project at a time.</p>
+    <p class="text-sm text-muted">Aezekiel Matthew Licardo — one project at a time.</p>
     <div class="flex items-center gap-5">
-      <a href="https://github.com/Polligzazer" target="_blank" rel="noopener" class="text-sm text-muted hover:text-[var(--text)] transition-colors">GitHub</a>
+      <a href="https://github.com/Polligazer" target="_blank" rel="noopener" class="text-sm text-muted hover:text-[var(--text)] transition-colors">GitHub</a>
       <a href="https://www.linkedin.com/in/aezekiel-matthew-licardo-6b8b3238b/" target="_blank" rel="noopener" class="text-sm text-muted hover:text-[var(--text)] transition-colors">LinkedIn</a>
       <a href="mailto:leikezea2007@gmail.com" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Email</a>
     </div>
   </div>
 </footer>
 
-<!-- MODAL -->
 <div id="modal-backdrop" role="presentation">
   <div class="fixed inset-0 flex items-start sm:items-center justify-center p-4 sm:p-8 overflow-y-auto">
     <div id="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"
@@ -110,7 +106,6 @@
 (function(){
   "use strict";
 
-  /* ---------- Theme ---------- */
   const root = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
   const iconSun = document.getElementById('icon-sun');
@@ -125,7 +120,7 @@
     try { return localStorage.getItem('jv-theme'); } catch(e){ return null; }
   }
   function storeTheme(t){
-    try { localStorage.setItem('jv-theme', t); } catch(e){ /* ignore */ }
+    try { localStorage.setItem('jv-theme', t); } catch(e){  }
   }
   let currentTheme = getStoredTheme() || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark');
   root.setAttribute('data-theme', currentTheme);
@@ -138,7 +133,6 @@
     storeTheme(currentTheme);
   });
 
-  /* ---------- Data ---------- */
   const projects = [
     {
       id: 'flo',
@@ -267,7 +261,7 @@
       category: 'photo',
       categoryLabel: 'Photo edit',
       description: 'Photos taken from CosMatsuri 2026',
-      image: 'assets/photos/cosmatsuri/img1.jpg', // Card thumbnail
+      image: 'assets/photos/cosmatsuri/img1.jpg',
       gallery: [
       'assets/photos/cosmatsuri/img1.jpg',
       'assets/photos/cosmatsuri/img2.jpg',
@@ -275,7 +269,6 @@
       ],
       features: [
         'Photos captured by my friends',
-        'Hobby photography',
         'Used basic photo editing skills for cosplay'
       ],
       tags: ['DSLR', 'Lightroom', 'Cosplay'],
@@ -322,10 +315,10 @@
       ],
       features: [
         'School project dedicated to a driving school',
-        'Used sql and basic java',
+        'Used SQL with hashing and basic java',
         'Owners, Admins, and Manager access only'
       ],
-      tags: ['DaVinci Resolve', 'Color-Grading', 'Phone'],
+      tags: ['SQL', 'Java', 'Windows System', 'School Project'],
       icon: 'apps',
     }
   ];
@@ -344,7 +337,7 @@
     video:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M10 8.7v6.6L15.5 12z" fill="currentColor" stroke="none"/></svg>',
     photo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="8.3" cy="9" r="1.4"/><path d="M4 16.5l4.8-4.8 3 3 3.4-3.4L20 16"/></svg>'
   };
-  /* ---------- YouTube Helpers ---------- */
+
   function getYouTubeEmbedUrl(url) {
     if (!url) return null;
       const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))([\w-]{11})/);
@@ -381,7 +374,6 @@
     lbImg.src = imgSrc;
     lb.classList.remove('hidden');
     
-    // Smooth GPU frame sync
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         lb.classList.remove('opacity-0');
@@ -404,7 +396,6 @@
     }
   }
 
-  /* ---------- Render tabs ---------- */
   const tabsEl = document.getElementById('filter-tabs');
   let activeFilter = 'all';
 
@@ -429,7 +420,6 @@
     });
   }
 
-  /* ---------- Render grid ---------- */
   const gridEl = document.getElementById('project-grid');
 
   function cardTemplate(p){
@@ -439,7 +429,6 @@
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', 'Open details for ' + p.title);
 
-    // Auto-fetch YT thumbnail if no custom image is assigned
     let coverSrc = p.image || (p.gallery && p.gallery[0]);
     if (!coverSrc && p.category === 'video' && p.youtubeUrl) {
       coverSrc = getYouTubeThumbnail(p.youtubeUrl);
@@ -483,7 +472,6 @@
   }
   renderGrid();
 
-  /* ---------- Modal ---------- */
   const backdrop = document.getElementById('modal-backdrop');
   const panel = document.getElementById('modal-panel');
   const closeBtn = document.getElementById('modal-close');
@@ -499,7 +487,6 @@
 
     const thumbEl = document.getElementById('modal-thumb');
 
-    // 1. VIDEO EDIT DISPLAY (Optimized & Quality Settings)
     if (p.category === 'video' && p.youtubeUrl) {
       thumbEl.innerHTML = `
         <iframe 
@@ -547,17 +534,13 @@
           counterEl.textContent = (activeIdx + 1) + ' / ' + p.gallery.length;
         };
       }
-    } 
-    // 3. WEB / APP COVER IMAGE
-    else if (p.image) {
+    } else if (p.image) {
       thumbEl.innerHTML = `<img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover rounded-md cursor-zoom-in" id="cover-img">`;
       const coverImg = document.getElementById('cover-img');
       if (coverImg) {
         coverImg.onclick = function() { openLightbox(p.image); };
       }
-    } 
-    // 4. FALLBACK ICON
-    else {
+    } else {
       thumbEl.innerHTML = '<div style="width:3.2rem;height:3.2rem;opacity:.8;color:var(--text-muted)">' + ICONS[p.icon] + '</div>';
     }
 
@@ -585,7 +568,6 @@
   }
 
   function closeModal(){
-    // Clearing innerHTML stops the YouTube iframe from continuing to play audio in the background
     document.getElementById('modal-thumb').innerHTML = ''; 
     backdrop.classList.remove('open');
     document.body.style.overflow = '';
@@ -607,7 +589,6 @@
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   if (backdrop) backdrop.addEventListener('click', function(e){ if (e.target === backdrop || e.target.classList.contains('overflow-y-auto')) closeModal(); });
 
-  /* ---------- Hero glow + entrance ---------- */
   const hero = document.getElementById('hero');
   const heroGlow = document.getElementById('hero-glow');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
